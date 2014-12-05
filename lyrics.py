@@ -7,7 +7,7 @@ import sys
 import re
 
 base = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&'
-query = urllib.urlencode({'q' :  sys.argv[1]+"lyrics"})
+query = urllib.urlencode({'q' :  sys.argv[1]+"azlyrics"})
 response = urllib.urlopen(base + query).read()
 data = json.loads(response)
 print
