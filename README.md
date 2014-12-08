@@ -7,3 +7,6 @@ Just put it in any folder and export the PATH variable. Whenever you feel like c
 you can just type 
 $~ lyrics <song-name>
 Thats it. Enjoy songs !!!
+
+Note: It works only for the english songs for now. 
+      Support for the hindi songs will be brought soon.
