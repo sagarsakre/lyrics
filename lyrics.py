@@ -13,8 +13,6 @@ data = json.loads(response)
 print
 print 'Trying to get data from'
 print data['responseData']['results'][0]['url']
-print
-print 'Enjoy the Lyrics of',sys.argv[1],'brought to you by Sagar Sakre'
 urlText = []
 
 #Define HTML Parser
@@ -36,6 +34,9 @@ lParser.close()
 #for item in urlText:
 #    f1.write(item)
 #    print item
+print
+print 'Enjoy the Lyrics of',urlText[52],'brought to you by Sagar Sakre'
+
 first_twelve = urlText[51:600]
 for each_line in first_twelve:
     if "/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent" in each_line:
