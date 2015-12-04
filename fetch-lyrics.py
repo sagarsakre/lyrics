@@ -7,11 +7,12 @@ import sys
 import re
 
 base = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&'
-query = urllib.urlencode({'q' :  sys.argv[1]+" azlyrics"})
+query = urllib.urlencode({'q' :  sys.argv[1]+"lyrics azlyrics"})
 response = urllib.urlopen(base + query).read()
 data = json.loads(response)
 print
-print 'Trying to get data from'
+print 'Fetching from .....'
+print
 print data['responseData']['results'][0]['url']
 urlText = []
 
@@ -26,21 +27,19 @@ class parseText(HTMLParser.HTMLParser):
 #Create instance of HTML parser
 lParser = parseText()
 
-#thisurl = data['responseData']['results'][0]['url']
 #Feed HTML file into parser
 lParser.feed(urllib.urlopen(data['responseData']['results'][0]['url']).read())
 lParser.close()
-#f1=open('./testfile', 'w+')
-#for item in urlText:
-#    f1.write(item)
-#    print item
 print
-print 'Enjoy the Lyrics of',urlText[52],'brought to you by Sagar Sakre'
-
-first_twelve = urlText[51:600]
+print 'Enjoy the Lyrics of',urlText[156],'brought to you by Sagar Sakre ...'
+print 
+print
+print '--------------------------------------------------------------------'
+first_twelve = urlText[155:600]
 for each_line in first_twelve:
     if "/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent" in each_line:
         break
     else:
         print each_line
-#if prog.match(each_line):
+
+print '--------------------------------NO_FEAR-------------------------------'
